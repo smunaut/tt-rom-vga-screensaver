@@ -58,14 +58,16 @@ define_pdn_grid \
     -starts_with POWER \
     -pins $::env(FP_PDN_VERTICAL_LAYER)
 
-# Define default grid for macro
+# Define default grid for macro with zero halo so the macro grid domain
+# matches the macro footprint exactly, keeping stdcell grid coverage for
+# all standard cells outside the macro.
 define_pdn_grid \
     -macro \
     -default \
     -name macro \
     -voltage_domain Die \
     -starts_with POWER \
-    -halo "$::env(FP_PDN_HORIZONTAL_HALO) $::env(FP_PDN_VERTICAL_HALO)"
+    -halo "0 0"
 
 # Create met4 stripes
 add_pdn_stripe \
@@ -94,3 +96,7 @@ add_pdn_connect \
 add_pdn_connect \
 	-grid macro \
     -layers "$::env(FP_PDN_VERTICAL_LAYER) $::env(FP_PDN_HORIZONTAL_LAYER)"
+
+# Allow unrepaired PDN channels to be warnings instead of errors.
+# Must be called after grids are defined since it iterates over existing grids.
+pdn::allow_repair_channels 1
