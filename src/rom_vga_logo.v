@@ -15,10 +15,10 @@ module rom_vga_logo (
     inout wire VGND,
 `endif
     input wire [11:0] addr,
-    output wire [7:0] q
+    output wire [5:0] q
 );
 
-  reg [7:0] rom_data[4095:0];
+  reg [5:0] rom_data[4095:0];
   initial begin
     $readmemh(`ROM_VMEM_PATH, rom_data);
   end

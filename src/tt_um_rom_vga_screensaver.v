@@ -90,7 +90,7 @@ module tt_um_rom_vga_screensaver (
   wire logo_pixels = cfg_tile || (x[9:6] == 0 && y[9:6] == 0);
 
   // Bitmap ROM:
-  wire [7:0] rom_data;
+  wire [5:0] rom_data;
   rom_vga_logo bitmap_rom (
       .addr({y[5:0], x[5:0]}),
       .q   (rom_data)
@@ -187,7 +187,5 @@ module tt_um_rom_vga_screensaver (
       dir_y <= 0;
     end
   endtask
-
-  wire  _unused = &{rom_data[7:6]};
 
 endmodule
