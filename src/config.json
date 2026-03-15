@@ -13,7 +13,7 @@
 
   "//": "PL_TARGET_DENSITY_PCT - You can increase this if Global Placement fails with error GPL-0302.",
   "//": "Users have reported that values up to 80 worked well for them.",
-  "PL_TARGET_DENSITY_PCT": 60,
+  "PL_TARGET_DENSITY_PCT": 80,
 
   "//": "CLOCK_PERIOD - Increase this in case you are getting setup time violations.",
   "//": "The value is in nanoseconds, so 20ns == 50MHz.",
@@ -47,8 +47,8 @@
   "//": "Reduce wasted space",
   "TOP_MARGIN_MULT": 1,
   "BOTTOM_MARGIN_MULT": 1,
-  "LEFT_MARGIN_MULT": 6,
-  "RIGHT_MARGIN_MULT": 6,
+  "LEFT_MARGIN_MULT": 4,
+  "RIGHT_MARGIN_MULT": 4,
 
   "//": "Absolute die size",
   "FP_SIZING": "absolute",
@@ -98,7 +98,7 @@
   "//": "  Config",
   "FP_PDN_HORIZONTAL_LAYER": "met3",
   "FP_MACRO_HORIZONTAL_HALO": "2",
-  "FP_MACRO_VERTICAL_HALO": "2",
+  "FP_MACRO_VERTICAL_HALO": "1",
   "FP_ENDCAP_CELL": "sky130_fd_sc_hd__tapvpwrvgnd_1",
   "FP_PDN_VOFFSET": "5",
   "FP_PDN_VSPACING": "1.5",
